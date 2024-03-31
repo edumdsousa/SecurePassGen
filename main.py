@@ -4,6 +4,9 @@ import random
 import string
 import tkinter.messagebox as messagebox
 
+# Definir janela_gerenciar como uma variável global
+janela_gerenciar = None
+
 def gerar_senha():
     comprimento = int(comprimento_entrada.get())
     caracteres = string.ascii_letters + string.digits + string.punctuation
@@ -31,18 +34,33 @@ def copiar_senha(event):
         root.clipboard_append(senha)
         root.update()
         messagebox.showinfo("Sucesso", "Senha copiada para a área de transferência!")
+        # Fechar a janela do gerenciador de senhas
+        janela_gerenciar.destroy()
 
 def gerenciar_senhas_salvas():
+    global janela_gerenciar
     # Nova janela
     janela_gerenciar = tk.Toplevel(root)
     janela_gerenciar.title("Senhas Salvas")
+    janela_gerenciar.iconbitmap(bitmap="icone.ico")
+
+    # Frame para a barra de rolagem e Treeview
+    frame = ttk.Frame(janela_gerenciar)
+    frame.pack(fill='both', expand=True)
+
+    # Barra de rolagem
+    scrollbar = ttk.Scrollbar(frame, orient='vertical')
+    scrollbar.pack(side='right', fill='y')
 
     # Treeview para exibir senhas salvas
     global tree
-    tree = ttk.Treeview(janela_gerenciar, columns=('Referência', 'Senha'), show='headings')
+    tree = ttk.Treeview(frame, columns=('Referência', 'Senha'), show='headings', yscrollcommand=scrollbar.set)
     tree.heading('Referência', text='Referência')
     tree.heading('Senha', text='Senha')
     tree.column('Senha', stretch=True)  # Ajuste automático do tamanho da coluna
+
+    # Configurar a barra de rolagem para rolar com o Treeview
+    scrollbar.config(command=tree.yview)
 
     # Lê senhas salvas do arquivo e adiciona ao Treeview
     with open("config.conf", "r") as arquivo:
@@ -60,7 +78,7 @@ def gerenciar_senhas_salvas():
 root = tk.Tk()
 root.title("Gerador de Senha Segura")
 root.configure(bg="#f0f0f0")  # Cor de fundo
-root.iconbitmap(bitmap="icone.ico") #icone
+root.iconbitmap(bitmap="icone.ico")
 
 # Impede o redimensionamento da janela
 root.resizable(False, False)
