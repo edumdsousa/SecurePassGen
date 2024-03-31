@@ -1,0 +1,2 @@
+# SecurePassGen
+ O SecurePassGen é um gerador de senhas seguras desenvolvido em Python. Este projeto permite aos usuários criar senhas fortes e aleatórias com facilidade, personalizando o comprimento da senha e os tipos de caracteres incluídos (letras maiúsculas, letras minúsculas, números e caracteres especiais). Com o SecurePassGen, você pode proteger suas contas online e manter suas informações seguras com senhas robustas e únicas. Experimente agora e fortaleça sua segurança online!
