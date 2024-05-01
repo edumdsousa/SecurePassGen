@@ -1,17 +1,38 @@
-# Secure Pass Gen
+# SecurePassGen
 
-O Secure Pass Gen é uma ferramenta simples e poderosa para gerar senhas seguras de forma rápida e conveniente. Com esta aplicação, você pode criar senhas complexas compostas por uma combinação de caracteres especiais, letras maiúsculas, letras minúsculas e números, ajudando a proteger suas contas online, informações sensíveis e muito mais.
+SecurePassGen é um gerador de senhas seguro e fácil de usar, desenvolvido em Python com a interface gráfica feita usando Tkinter.
 
-## Recursos Principais
-- **Geração de Senha Segura:** Crie senhas seguras compostas por uma combinação de caracteres especiais, letras maiúsculas, letras minúsculas e números.
-- **Executável Independente:** Baixe e execute o Secure Pass Gen sem a necessidade de instalação.
-- **Interface Simples:** Interface de usuário intuitiva e fácil de usar para gerar senhas com apenas alguns cliques.
-- **Sem Conexão com a Internet:** Use o Secure Pass Gen offline, garantindo a segurança de suas senhas.
-- **Instalação Fácil:** Instale o Secure Pass Gen com facilidade em seu próprio computador usando o instalador fornecido.
+## Recursos
 
-## Como Usar
-1. Baixe o Secure Pass Gen.
-2. Execute o Secure Pass Gen para gerar automaticamente uma senha segura.
-3. Salve a senha gerada ou copie para a área de transferência conforme necessário.
+- Geração de senhas seguras com diferentes comprimentos.
+- Opção para salvar senhas geradas junto com uma referência.
+- Interface simples e intuitiva.
+- Gerenciamento de senhas salvas com opção para editar e copiar senhas.
+- Suporte para múltiplas camadas de senhas, permitindo criar diferentes conjuntos de senhas para diferentes fins.
 
-Proteja suas contas online e mantenha suas informações seguras com o Secure Pass Gen!
+## Requisitos
+
+- Python 3.x instalado no sistema.
+- Bibliotecas Python: tkinter, random, string, os.
+
+## Como usar
+
+1. Clone este repositório ou baixe o código-fonte.
+2. Execute o programa executando o arquivo SecurePassGen.py.
+3. Use a interface gráfica para gerar, salvar e gerenciar suas senhas.
+
+## Licença
+
+Este projeto está licenciado sob a [Licença MIT](LICENSE.txt).
+
+## Contribuição
+
+Contribuições são bem-vindas! Sinta-se à vontade para enviar sugestões, relatar problemas ou enviar solicitações de melhoria.
+
+## Autor
+
+[Eduardo Marques de Sousa]
+
+## Contato
+
+[edu.mdsousa.dev@gmail.com]
