@@ -4,6 +4,7 @@ import random
 import string
 import tkinter.messagebox as messagebox
 import os
+import subprocess
 
 # Dicionário para armazenar os trees de cada aba
 trees = {}
@@ -30,7 +31,8 @@ def editar_senha(nome_arquivo):
     janela_gerenciar.destroy()
     # Abrir o arquivo onde as senhas estão salvas
     try:
-        os.system(f"notepad {nome_arquivo}")  # Abre o arquivo no bloco de notas do Windows
+        # Abrir o arquivo com o bloco de notas
+        subprocess.Popen(['notepad', nome_arquivo])
     except Exception as e:
         messagebox.showerror("Erro", f"Erro ao abrir o arquivo: {e}")
 
@@ -125,6 +127,8 @@ def criar_aba(nome_visual, nome_arquivo):
 # Configuração da janela principal
 root = tk.Tk()
 root.title("Gerador de Senha Segura")
+root.iconbitmap(bitmap="icone.ico")
+root.iconbitmap(default="icone.ico")
 
 # Carregar um estilo mais moderno para os widgets
 style = ttk.Style()
